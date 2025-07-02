@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <form method="post" action="login.php" class="auth-card">
+      <h2>🔐 Welcome Back</h2>
+
+      <div class="input-group">
+        <input type="text" name="username" required />
+        <label>Username</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" required />
+        <label>Password</label>
+      </div>
+
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="register.php">Sign Up</a></p>
+    </form>
+  </div>
+</body>
+</html>

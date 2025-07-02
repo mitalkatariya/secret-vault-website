@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unlocked Messages</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 🔙 Go Back Button -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="goBack()" class="primary">⬅ Go Back</button>
+  </div>
+
+  <!-- 📄 Message Table -->
+  <div class="container" style="margin-top: 20px;">
+    <div class="card">
+      <h2 style="text-align: center;">📬 Your Unlocked Messages</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>📄 Content</th>
+            <th>📅 Date</th>
+            <th>⬇ Download</th>
+            <th>🗑 Delete</th>
+            <th>📝 Update</th>
+          </tr>
+        </thead>
+        <tbody id="messageList">
+          <!-- Messages will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/view.js"></script>
+</body>
+</html>
