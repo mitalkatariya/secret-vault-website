@@ -1,4 +1,5 @@
 # 🔐 SecretVault – Private Message Locking System
+Secure message locker system using PHP & MySQL.
 
 **SecretVault** is a secure and easy-to-use message locking web app.  
 Users can lock, unlock, and manage secret messages using a secret code.
