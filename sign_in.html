@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SIGN IN</title>
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <!-- SIGN IN Form -->
+    <form method="post" action="sign_in.php" class="auth-card">
+      <h2>🔐 SIGN IN</h2>
+
+      <!-- Logout Success Message -->
+      <?php if (isset($_GET['logout']) && $_GET['logout'] == 'success'): ?>
+        <p style="color: green; font-weight: bold; text-align:center;">You have been logged out successfully.</p>
+      <?php endif; ?>
+
+      <!-- Username Field -->
+      <div class="input-group">
+        <input type="text" name="username" required />
+        <label>Username</label>
+      </div>
+
+      <!-- Password Field -->
+      <div class="input-group">
+        <input type="password" name="password" required />
+        <label>Password</label>
+      </div>
+
+      <!-- Login Button -->
+      <button type="submit">SIGN IN</button>
+
+      <!-- Link to Registration -->
+      <p>Don't have an account? <a href="sign_up.html">Sign Up</a></p>
+    </form>
+  </div>
+</body>
+</html>

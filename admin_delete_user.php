@@ -1,11 +1,12 @@
 <?php
+// Include the database connection file
 require 'db.php';
 
-// Gujarati Comment: GET request માં થી user ID મેળવો
+// Get the user ID from the GET request
 $id = $_GET['id'] ?? null;
 
+// If ID exists, execute the delete query
 if ($id) {
-    // Gujarati Comment: Users table માં થી આ ID વાળો user delete કરો
     $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
     $stmt->execute([$id]);
 }

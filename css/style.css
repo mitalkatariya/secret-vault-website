@@ -1,5 +1,7 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Root Color Variables */
 :root {
   --bg: #f0f4f8;
   --card: #ffffff;
@@ -12,12 +14,14 @@
   --hover: #f3f4f6;
 }
 
+/* Reset and Global Styling */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #dbeafe, #f0fdf4);
@@ -30,6 +34,7 @@ body {
   padding: 2rem 1rem;
 }
 
+/* Header Section */
 .header {
   background: var(--accent);
   color: white;
@@ -45,11 +50,13 @@ body {
   animation: slideFade 0.7s ease;
 }
 
+/* Header Title */
 .header h1 {
   font-size: 1.6rem;
   font-weight: 600;
 }
 
+/* Main Container */
 .container {
   width: 100%;
   max-width: 960px;
@@ -58,6 +65,7 @@ body {
   gap: 2rem;
 }
 
+/* Card Component */
 .card {
   background: var(--card);
   padding: 2rem;
@@ -67,6 +75,7 @@ body {
   animation: fadeInUp 0.6s ease;
 }
 
+/* Form Inputs and Textareas */
 input,
 textarea {
   width: 100%;
@@ -77,6 +86,7 @@ textarea {
   margin-bottom: 1rem;
 }
 
+/* Focus Effect on Input */
 input:focus,
 textarea:focus {
   border-color: var(--primary);
@@ -84,11 +94,13 @@ textarea:focus {
   outline: none;
 }
 
+/* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
+/* Table Header and Data */
 th,
 td {
   text-align: center;
@@ -102,7 +114,7 @@ td {
   max-width: 300px;
 }
 
-/* ✅ Common Button Style */
+/* Common Button Styles */
 button,
 .download-btn,
 .delete-btn,
@@ -120,7 +132,7 @@ button,
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* 🔐 Lock / Unlock / Download */
+/* Lock / Unlock / Download Buttons */
 button.primary,
 .download-btn {
   background-color: var(--primary);
@@ -133,57 +145,58 @@ button.primary:hover,
   transform: scale(1.05);
 }
 
-/* 🗑️ Delete Button */
+/* Delete Button Styling */
 .delete-btn {
-   background-color: var(--primary);
+  background-color: var(--primary);
   color: white;
 }
 
 .delete-btn:hover {
-    background-color: var(--primary-hover);
+  background-color: var(--primary-hover);
   transform: scale(1.05);
 }
 
-/* 📝 Update Button */
+/* Update Button Styling */
 .update-btn {
-   background-color: var(--primary);
+  background-color: var(--primary);
   color: white;
 }
 
 .update-btn:hover {
-    background-color: var(--primary-hover);
+  background-color: var(--primary-hover);
   transform: scale(1.05);
 }
 
+/* Material Icons Size */
 .material-icons {
   font-size: 20px;
 }
 
+/* Slide-In Animation for Header */
 @keyframes slideFade {
   from {
     opacity: 0;
     transform: translateY(-20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Fade-In Animation for Cards */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(40px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* 📱 Responsive */
+/* Responsive Design for Small Devices */
 @media (max-width: 640px) {
   .header h1 {
     font-size: 1.25rem;

@@ -3,37 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <title>Unlocked Messages</title>
+
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- 🔙 Go Back Button -->
+  <!-- Back Button -->
   <div style="text-align: center; margin-top: 20px;">
-    <button onclick="goBack()" class="primary">⬅ Go Back</button>
+    <button onclick="goBack()" class="primary">Go Back</button>
   </div>
 
-  <!-- 📄 Message Table -->
+  <!-- Message Display Section -->
   <div class="container" style="margin-top: 20px;">
     <div class="card">
-      <h2 style="text-align: center;">📬 Your Unlocked Messages</h2>
+      <h2 style="text-align: center;">Your Unlocked Messages</h2>
+
+      <!-- Messages Table -->
       <table border="1">
         <thead>
           <tr>
-            <th>📄 Content</th>
-            <th>📅 Date</th>
-            <th>⬇ Download</th>
-            <th>🗑 Delete</th>
-            <th>📝 Update</th>
+            <th>Content</th>
+            <th>Date</th>
+            <th>Download</th>
+            <th>Delete</th>
+            <th>Update</th>
           </tr>
         </thead>
         <tbody id="messageList">
-          <!-- Messages will be inserted here -->
+          <!-- Messages will be dynamically loaded here by JS -->
         </tbody>
       </table>
     </div>
   </div>
 
+  <!-- Link to view.js for handling actions -->
   <script src="js/view.js"></script>
 </body>
 </html>

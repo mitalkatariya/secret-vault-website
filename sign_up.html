@@ -1,38 +1,45 @@
-<!-- signup.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sign Up</title>
+  <title>SIGN UP</title>
   <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body>
   <div class="auth-container">
-    <form method="post" action="signup.php" class="auth-card">
-      <h2>📝 Create Account</h2>
+    <!--  SIGN UP Form -->
+    <form method="post" action="sign_up.php" class="auth-card">
+      <h2>📝 SIGN UP</h2>
 
+      <!-- Username input -->
       <div class="input-group">
         <input type="text" name="username" required pattern="^[a-zA-Z0-9_]{3,}$" />
         <label>Choose a Username (e.g., mital123)</label>
       </div>
 
+      <!-- Email input -->
       <div class="input-group">
         <input type="email" name="email" required />
         <label>Your Email Address</label>
       </div>
 
+      <!-- Password input -->
       <div class="input-group">
         <input type="password" name="password" required minlength="8" />
         <label>Password (min 8 characters)</label>
       </div>
 
+      <!-- Confirm password input -->
       <div class="input-group">
         <input type="password" name="confirm_password" required minlength="8" />
         <label>Confirm Password</label>
       </div>
 
+      <!-- Submit button -->
       <button type="submit">Sign Up</button>
-      <p>Already have an account? <a href="login.php">Login</a></p>
+
+      <!-- Redirect to Sign In -->
+      <p>Already have an account? <a href="sign_in.html">Sign In</a></p>
     </form>
   </div>
 </body>

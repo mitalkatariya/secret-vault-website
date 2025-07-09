@@ -1,25 +1,37 @@
 <?php
+// Start session to manage admin login session
 session_start();
+
+// Include database connection
 require 'db.php';
+
+// Initialize error message
 $error = '';
 
-// 👉 Form submit થયા પછી process કરો
+// Handle POST form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
+    // Sanitize inputs
+  $email = strtolower(trim($_POST['email'] ?? ''));
+
     $password = $_POST['password'] ?? '';
 
-    // 🔍 Admin user શોધો
+    // Fetch admin user from database with role = 'admin'
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? AND role = 'admin'");
     $stmt->execute([$email]);
     $admin = $stmt->fetch();
 
-    // ✅ Password check કરો
+    // Verify password
     if ($admin && password_verify($password, $admin['password'])) {
+        // Set admin session
         $_SESSION['admin'] = true;
+        $_SESSION['admin_email'] = $admin['email']; // Optional use in admin dashboard
+
+        // Redirect to admin dashboard
         header("Location: admin-dashboard.php");
         exit;
     } else {
-        $error = "⛔ Invalid admin credentials.";
+        // Show error if login fails
+        $error = "Invalid admin email or password.";
     }
 }
 ?>
@@ -27,34 +39,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Admin Login</title>
   <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body>
+
   <div class="auth-container">
     <div class="auth-card">
-      <h2>🔐 Admin Login</h2>
+      <h2>Admin Login</h2>
 
-      <?php if ($error): ?>
-        <p style="color:red; font-weight:bold;"><?= $error ?></p>
+      <!-- Show error message -->
+      <?php if (!empty($error)): ?>
+        <p style="color:red; font-weight:bold; text-align:center;">
+          <?= htmlspecialchars($error) ?>
+        </p>
       <?php endif; ?>
 
-      <!-- 🧾 Login Form -->
-      <form method="POST">
+      <!-- Admin Login Form -->
+      <form method="POST" style="margin-top: 1rem;">
         <div class="input-group">
-          <input type="email" name="email" placeholder="Admin Email" required />
+          <input type="email" name="email" placeholder=" " required />
+          <label>Admin Email</label>
         </div>
 
         <div class="input-group">
-          <input type="password" name="password" placeholder="Password" required />
+          <input type="password" name="password" placeholder=" " required />
+          <label>Password</label>
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit">LOGIN</button>
+
+        <p style="margin-top:1rem;">
+          <a href="index.php">Back to Home</a>
+        </p>
       </form>
-
-      <p><a href="index.php">⬅ Back to Home</a></p>
     </div>
   </div>
+
 </body>
 </html>

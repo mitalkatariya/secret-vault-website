@@ -1,23 +1,26 @@
+// Get the secret code from the URL parameter
 const urlParams = new URLSearchParams(window.location.search);
 const secretCode = urlParams.get('code') || '';
 const messageList = document.getElementById('messageList');
 
-// 📥 Fetch messages on load
+// Fetch messages from the server and display them
 async function fetchMsgs() {
   const res = await fetch('fetch.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: secretCode })
+    body: JSON.stringify({ code: secretCode }) // Send the secret code to fetch related messages
   });
 
   const msgs = await res.json();
-  messageList.innerHTML = '';
+  messageList.innerHTML = ''; // Clear any previous messages
 
+  // If no messages found, show a message
   if (!msgs.length) {
-    messageList.innerHTML = `<tr><td colspan="5" style="text-align:center;color:red;">❌ No message found for this code.</td></tr>`;
+    messageList.innerHTML = `<tr><td colspan="5" style="text-align:center;color:red;">No message found for this code.</td></tr>`;
     return;
   }
 
+  // Loop through each message and create a table row
   msgs.forEach(msg => {
     const tr = document.createElement('tr');
 
@@ -41,63 +44,64 @@ async function fetchMsgs() {
       </td>
     `;
 
-    messageList.appendChild(tr);
+    messageList.appendChild(tr); // Add the row to the table body
   });
 }
 
-// ⬇ Download as text file
+// Download message content as a .txt file
 function downloadText(content, filename) {
   const blob = new Blob([content], { type: 'text/plain' });
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
+  a.href = URL.createObjectURL(blob); // Create temporary URL for the file
   a.download = filename;
-  a.click();
+  a.click(); // Trigger download
 }
 
-// 🗑 Delete message
+// Delete a specific message by ID
 async function deleteMsg(id) {
   if (!confirm("Are you sure you want to delete this message?")) return;
 
   const res = await fetch('delete.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id })
+    body: JSON.stringify({ id }) // Send the message ID
   });
 
   const result = await res.json();
 
   if (result.success) {
-    alert("✅ Message deleted");
-    fetchMsgs();
+    alert("Message deleted");
+    fetchMsgs(); // Reload message list
   } else {
-    alert("❌ Failed to delete message");
+    alert("Failed to delete message");
   }
 }
 
-// 📝 Update message
+// Update an existing message
 function updateMsg(id, current) {
-  const newMsg = prompt("Update your message:", current);
+  const newMsg = prompt("Update your message:", current); // Prompt for new message content
   if (!newMsg || newMsg === current) return;
 
   fetch('update.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id, content: newMsg })
+    body: JSON.stringify({ id, content: newMsg }) // Send updated content
   })
   .then(res => res.json())
   .then(result => {
     if (result.success) {
-      alert("✅ Message updated");
-      fetchMsgs();
+      alert("Message updated");
+      fetchMsgs(); // Reload message list
     } else {
-      alert("❌ Update failed");
+      alert("Update failed");
     }
   });
 }
 
-// 🔙 Go back to dashboard
+// Redirect the user back to dashboard
 function goBack() {
   window.location.href = 'dashboard.php';
 }
 
+// Load messages initially when the page opens
 fetchMsgs();

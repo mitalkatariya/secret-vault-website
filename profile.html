@@ -1,0 +1,62 @@
+<?php
+// Start the session and verify if the user is logged in
+session_start();
+if (!isset($_SESSION['username']) || !isset($_SESSION['email'])) {
+    // Redirect to sign-in page if user is not authenticated
+    header("Location: sign_in.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile – SecretVault</title>
+
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Responsive layout settings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1>SecretVault</h1>
+    <nav>
+      <ul class="nav-links" style="display: flex; gap: 20px; list-style: none;">
+        <li><a href="index.html" style="color:white;">Home</a></li>
+        <li><a href="about.html" style="color:white;">About</a></li>
+        <li><a href="profile.php" style="color:white;">Profile</a></li>
+        <li><a href="sign_out.php" style="color:white;">Sign Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Profile Section -->
+  <section class="container">
+    <div class="card">
+      <h2 style="text-align:center; color: var(--accent); margin-bottom: 1rem;">Your Profile</h2>
+
+      <!-- Display user info using session -->
+      <p><strong>Username:</strong> <?= htmlspecialchars($_SESSION['username']) ?></p>
+      <p><strong>Email:</strong> <?= htmlspecialchars($_SESSION['email']) ?></p>
+
+      <!-- Link to change password -->
+      <div style="margin-top: 2rem; text-align: center;">
+        <a href="change_password.php">
+          <button class="primary">Change Password</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer style="margin-top:auto; text-align:center; padding:1rem; color:#555;">
+    © 2025 <strong>SecretVault</strong> | Designed for Privacy & Security
+  </footer>
+
+</body>
+</html>
