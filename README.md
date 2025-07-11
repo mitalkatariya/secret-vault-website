@@ -38,12 +38,6 @@ Users can lock, unlock, and manage secret messages using a secret code.
 
 ---
 
-### 🔗 Live Link (Optional)
-
-You can host this project on Netlify (frontend only) and use free PHP host (like 000webhost or InfinityFree) for backend.
-
----
-
 ### 📧 Contact
 
 Made by [Mital Katariya]  
