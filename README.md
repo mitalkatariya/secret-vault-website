@@ -28,16 +28,16 @@ Users can lock, unlock, and manage secret messages using a secret code.
 ## 📸 Screenshots
 
 ### 🏠 Home Page (index.php)
-![Home Page](images/index.png)
+![Home Page](images/png)
 
 ### 🔐 Dashboard (dashboard.php)
-![Dashboard](images/dashboard.png)
+![Dashboard](images/.png)
 
 ### 📋 Unlocked Messages (view.html / view.js)
 ![Unlocked Messages](images/unlocked-messages.png)
 
 ### 👤 Profile Page (profile.php)
-![Profile Page](images/profile.png)
+![Profile Page](images/.png)
 
 
 
