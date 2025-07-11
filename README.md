@@ -40,12 +40,10 @@ Users can lock, unlock, and manage secret messages using a secret code.
 
 ## 📸 Screenshots
 
-🔗 [Click here to view 🏠 Home Page  Screenshot](https://github.com/mitalkatariya/secret-vault-website/blob/main/images/index.png?raw=true)
-
+🔗 [Click here to view 🏠 Home Page Screenshot](https://github.com/mitalkatariya/secret-vault-website/blob/main/screenshots/home.png?raw=true)
 🔗 [Click here to view 🔐 Dashboard Screenshot](https://github.com/mitalkatariya/secret-vault-website/images/dashboard.png) 
 🔗 [Click here to view 📋 Unlocked Messages Screenshot](https://github.com/mitalkatariya/secret-vault-website/images/unlocked-messages.png) 
 🔗 [Click here to view 👤 Profile Page Screenshot](https://github.com/mitalkatariya/secret-vault-website/images/profile.png) 
-
 
 📌 *Click the above links to view full-size screenshots.*
 
