@@ -31,7 +31,7 @@ Users can lock, unlock, and manage secret messages using a secret code.
 ![Home Page](images/png)
 
 ### 🔐 Dashboard (dashboard.php)
-![Dashboard](images/.png)
+![Dashboard](images/dashboard.png)
 
 ### 📋 Unlocked Messages (view.html / view.js)
 ![Unlocked Messages](images/unlocked-messages.png)
