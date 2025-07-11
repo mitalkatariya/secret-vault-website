@@ -24,23 +24,6 @@ Users can lock, unlock, and manage secret messages using a secret code.
 - Google Fonts & Material Icons  
 
 
-
-## 📸 Screenshots
-
-### 🏠 Home Page (index.php)
-![Home Page](images/png)
-
-### 🔐 Dashboard (dashboard.php)
-![Dashboard](images/dashboard.png)
-
-### 📋 Unlocked Messages (view.html / view.js)
-![Unlocked Messages](images/unlocked-messages.png)
-
-### 👤 Profile Page (profile.php)
-![Profile Page](images/.png)
-
-
-
 ## 🚀 How to Run Locally
 
 1. Clone the repo  
